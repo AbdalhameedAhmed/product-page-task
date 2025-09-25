@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="container mx-auto flex w-[90%] items-center justify-between border-b-[1px] border-dashed border-[#A3A3A3] py-8">
+    <header className="container mx-auto flex w-[90%] items-center justify-between border-b border-dashed border-[#A3A3A3] py-8">
       <img src={logo} alt="Logo" className="w-[140px] sm:w-auto" />
 
       <div className="flex items-center gap-4">

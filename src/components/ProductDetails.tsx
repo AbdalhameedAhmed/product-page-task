@@ -25,7 +25,7 @@ const ProductDetails = () => {
         <h1 className="mb-5 text-2xl font-bold md:text-3xl">
           Long Sleeve Overshirt, Khaki, 6
         </h1>
-        <div className="flex items-center justify-between border-b-[1px] border-dashed border-[#A3A3A3] pb-6">
+        <div className="flex items-center justify-between border-b border-dashed border-[#A3A3A3] pb-6">
           <div className="flex items-center">
             <span className="mr-2 text-sm text-gray-500 line-through sm:mr-4 sm:text-base">
               £40.00

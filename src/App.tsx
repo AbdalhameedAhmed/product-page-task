@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ProductDetails from "./components/ProductDetails";
 import ProductGallery from "./components/ProductGallery";
 import RelatedProducts from "./components/RelatedProducts";
+import ProductReviews from "./components/ReviewsSection/";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         ]}
       />
 
-      <main className="container mx-auto w-[90%] border-b-[1px] border-dashed border-[#A3A3A3] pb-14 sm:pb-20">
+      <main className="container mx-auto w-[90%] border-b border-dashed border-[#A3A3A3] pb-14 sm:pb-20">
         <div className="gap-32 lg:flex">
           <ProductGallery />
           <ProductDetails />
@@ -28,6 +29,8 @@ function App() {
       </main>
 
       <RelatedProducts />
+
+      <ProductReviews />
     </>
   );
 }
