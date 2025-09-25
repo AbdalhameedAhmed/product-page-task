@@ -5,4 +5,5 @@ export interface SectionLayoutProps {
   showViewAll?: boolean;
   onViewAllClick?: () => void;
   children: ReactNode;
+  className?: string;
 }

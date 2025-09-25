@@ -6,6 +6,8 @@ import ProductDetails from "./components/ProductDetails";
 import ProductGallery from "./components/ProductGallery";
 import RelatedProducts from "./components/RelatedProducts";
 import ProductReviews from "./components/ReviewsSection/";
+import Popular from "./components/Popular";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
       <RelatedProducts />
 
       <ProductReviews />
+      <Popular />
+      <Footer />
     </>
   );
 }
