@@ -60,9 +60,9 @@ export default function ReviewsList() {
   ];
 
   return (
-    <div className="lg:flex lg:space-x-12">
+    <div className="lg:flex lg:items-start lg:space-x-12">
       {/* Left side - Filters */}
-      <div className="mb-8 lg:mb-0 lg:w-1/4">
+      <div className="mb-8 lg:sticky lg:top-[20px] lg:mb-0 lg:w-1/4">
         {/* Review filters */}
         <div className="rounded-lg border-[1px] border-dashed border-[#BBBBBB] bg-white p-6">
           <h3 className="mb-4 border-b border-dashed border-[#BBBBBB] pb-4 text-base font-semibold sm:mb-6 sm:pb-6">

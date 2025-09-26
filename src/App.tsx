@@ -1,14 +1,14 @@
 import MainPage from "@/pages/MainPage";
+import "react-inner-image-zoom/lib/styles.min.css";
 import "./App.css";
 import BreadCrumbs from "./components/BreadCrumbs";
+import { Footer } from "./components/Footer";
 import Header from "./components/Header";
+import Popular from "./components/Popular";
 import ProductDetails from "./components/ProductDetails";
 import ProductGallery from "./components/ProductGallery";
 import RelatedProducts from "./components/RelatedProducts";
 import ProductReviews from "./components/ReviewsSection/";
-import Popular from "./components/Popular";
-import { Footer } from "./components/Footer";
-
 function App() {
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
       />
 
       <main className="container mx-auto w-[90%] border-b border-dashed border-[#A3A3A3] pb-14 sm:pb-20">
-        <div className="gap-32 lg:flex">
+        <div className="gap-32 lg:flex lg:gap-12 xl:gap-32">
           <ProductGallery />
           <ProductDetails />
         </div>

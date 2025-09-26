@@ -41,6 +41,7 @@ export default function DropDownItem({
       >
         {items?.map((item) => (
           <a
+            key={item.title}
             href={item.path}
             className="block w-[85%] border-b border-dashed border-gray-600 py-2 sm:border-none"
           >
