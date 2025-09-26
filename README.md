@@ -1,75 +1,164 @@
-# React + TypeScript + Vite
+# Product Page Task - ElegantSoft
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based product details page application with cart functionality, developed as a task for **ElegantSoft**.
 
-Currently, two official plugins are available:
+## 🎯 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, responsive product page application built with React, TypeScript, and Vite. The application features:
 
-## React Compiler
+- **Product Details Display** - Complete product information with images, pricing, and descriptions
+- **Shopping Cart Functionality** - Add/remove items, quantity management, and persistence
+- **Product Variations** - Color and size selection with variant matching
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **State Management** - Zustand for cart and product state
+- **API Integration** - React Query for data fetching
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 Quick Start
 
-Note: This will impact Vite dev & build performances.
+### Option 1: Node.js Installation
 
-## Expanding the ESLint configuration
+#### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (version 16 or higher)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### Installation Steps
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   git clone <repository-url>
+   cd product-page-task
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application.
+
+### Option 2: Docker Installation
+
+#### Prerequisites
+
+- Docker installed on your system
+
+#### Method A: Docker Commands
+
+1. **Build the Docker image**
+
+   ```bash
+   docker build -t viteapp .
+   ```
+
+2. **Run the container**
+
+   ```bash
+   docker run -it --rm -v ${PWD}:/app -p 5173:5173 viteapp
+   ```
+
+3. **Access the application**
+   Open your browser and navigate to `http://localhost:5173`
+
+## 📦 Available Scripts
+
+```bash
+# Development
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+
+# Code Quality
+npm run lint         # Run ESLint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏗️ Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/           # React components
+│   ├── Header/          # Header and navigation
+│   ├── shared/          # Reusable components
+│   └── ReviewsSection/  # Product reviews
+├── hooks/               # Custom React hooks
+├── pages/                # Page components
+├── services/            # API services
+├── store/               # State management (Zustand)
+├── types/               # TypeScript type definitions
+└── assets/              # Static assets (images, icons)
+```
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: React 19.1.1
+- **Build Tool**: Vite 7.1.7
+- **Language**: TypeScript 5.8.3
+- **Styling**: Tailwind CSS 4.1.13
+- **State Management**: Zustand 5.0.8
+- **Data Fetching**: TanStack Query 5.90.2
+- **Icons**: Lucide React 0.544.0
+- **Notifications**: React Toastify 11.0.5
+
+## 🎨 Key Features
+
+### Product Details
+
+- Dynamic product information display
+- High-quality image gallery with zoom functionality
+- Price display with sale price support
+- Product variations (color, size) with real-time updates
+- Stock availability indicators
+- Customer reviews and ratings
+
+### Shopping Cart
+
+- Add/remove items with quantity management
+- Persistent cart state across sessions
+- Real-time stock validation
+- Toast notifications for user feedback
+- Responsive cart dropdown
+
+### User Experience
+
+- Mobile-first responsive design
+- Smooth animations and transitions
+- Accessibility features (keyboard navigation, screen readers)
+- Loading states and error handling
+- SEO-friendly structure
+
+### Code Quality
+
+The project follows modern React and TypeScript best practices:
+
+- **TypeScript** for type safety
+- **ESLint** for code linting
+- **Prettier** for code formatting
+- **Tailwind CSS** for utility-first styling
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🤝 Contributing
+
+This project was developed as a task for ElegantSoft. For any questions or feedback, please contact the development team.
+
+## 📄 License
+
+This project is proprietary to ElegantSoft.
+
+---
+
+**Developed for ElegantSoft** 🚀
