@@ -13,8 +13,9 @@ export const products: Product[] = [
     rating: 4.5,
     reviews: 1258,
     image: product1Image,
-    quantity: 1,
+    stock: 1,
     describtion: "Wide Leg Cropped Jeans,Denim",
+    quantity: 0,
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ export const products: Product[] = [
     reviews: 896,
     image: product2Image,
     describtion: "Long Sleeve Utility Shirt, Navy, 6",
-    quantity: 5,
+    stock: 5,
+    quantity: 0,
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ export const products: Product[] = [
     reviews: 423,
     image: product3Image,
     describtion: "Stripe Curved Hem Shirt, Blue",
-    quantity: 2,
+    stock: 2,
+    quantity: 0,
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ export const products: Product[] = [
     reviews: 234,
     image: product4Image,
     describtion: "Denim Overshirt, Mid Wash",
-    quantity: 3,
+    stock: 3,
+    quantity: 0,
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ export const products: Product[] = [
     reviews: 156,
     image: product5Image,
     describtion: "Linen Blazer, Navy",
-    quantity: 4,
+    stock: 4,
+    quantity: 0,
   },
 ];

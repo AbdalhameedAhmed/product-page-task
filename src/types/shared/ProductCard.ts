@@ -7,5 +7,6 @@ export interface Product {
   reviews: number;
   image: string;
   describtion: string;
+  stock: number;
   quantity: number;
 }

@@ -1,9 +1,9 @@
 import logo from "@/assets/Logo.png";
 import bars from "@/assets/bars.svg";
-import cartIcon from "@/assets/cart.svg";
 import HeaderResponsiveMenu from "@/components/Header/HeaderResponsiveMenu";
 import type { HeaderResponsiveMenuItem } from "@/types/Header/HeaderMenu";
 import { useState } from "react";
+import Cart from "./Cart";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -16,7 +16,7 @@ export default function Header() {
           setIsOpen={setIsOpen}
           items={navItems}
         />
-        <img src={cartIcon} alt="cart" className="cursor-pointer" />
+        <Cart />
         <img
           src={bars}
           alt="open side menu"

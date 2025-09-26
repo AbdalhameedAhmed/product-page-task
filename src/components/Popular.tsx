@@ -1,8 +1,9 @@
-import { products } from "@/dummyData/products";
+import { useProductStore } from "@/store/productStore";
 import SectionLayout from "./layouts/SectionLayout";
 import ProductCard from "./shared/ProductCard";
 
 export default function Popular() {
+  const { products } = useProductStore();
   return (
     <SectionLayout
       title="Popular this week"

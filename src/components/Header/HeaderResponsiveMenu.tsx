@@ -16,7 +16,7 @@ export default function HeaderResponsiveMenu({
     <div
       ref={MenuRef}
       className={clsx(
-        "fixed top-0 right-0 z-10 h-screen w-[300px] origin-right scale-x-0 bg-gray-200 transition duration-300 sm:static sm:h-auto sm:w-auto sm:scale-100 sm:bg-transparent",
+        "fixed top-0 right-0 z-30 h-screen w-[300px] origin-right scale-x-0 bg-gray-200 transition duration-300 sm:static sm:h-auto sm:w-auto sm:scale-100 sm:bg-transparent",
         {
           "scale-x-100": isOpen,
         },
