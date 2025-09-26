@@ -1,6 +1,7 @@
 import { ChevronRight, Star, ThumbsDown, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 import AccordionMenu from "../shared/AccordionMenu";
+import { reviews } from "@/dummyData/reviews";
 
 export default function ReviewsList() {
   const [activeFilter, setActiveFilter] = useState("All Reviews");
@@ -19,45 +20,6 @@ export default function ReviewsList() {
       />
     ));
   };
-
-  const reviews = [
-    {
-      id: 1,
-      rating: 5,
-      title: "This is amazing product! love it.",
-      author: "Dominic Howard",
-      date: "July 15, 2021",
-      helpful: 115,
-      verified: true,
-    },
-    {
-      id: 2,
-      rating: 5,
-      title: "This is amazing product! love it.",
-      author: "Christie Rollins Hunt",
-      date: "July 15, 2021",
-      helpful: 89,
-      verified: true,
-    },
-    {
-      id: 3,
-      rating: 5,
-      title: "This is amazing product! love it.",
-      author: "Matthew Murphy",
-      date: "July 15, 2021",
-      helpful: 67,
-      verified: true,
-    },
-    {
-      id: 4,
-      rating: 5,
-      title: "This is amazing product! love it.",
-      author: "Richard Richards",
-      date: "July 15, 2021",
-      helpful: 34,
-      verified: true,
-    },
-  ];
 
   return (
     <div className="lg:flex lg:items-start lg:space-x-12">
@@ -164,9 +126,7 @@ export default function ReviewsList() {
                 {/* User info */}
                 <div className="flex items-center gap-2">
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 sm:h-8 sm:w-8">
-                    <span className="text-xs font-medium text-blue-600 sm:text-sm">
-                      {review.author.charAt(0)}
-                    </span>
+                    <img src={review.image} alt={`${review.author}`} />
                   </div>
                   <div className="text-xs font-medium sm:text-base">
                     {review.author}

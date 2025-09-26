@@ -21,7 +21,7 @@ const CircularProgressBar = ({
         strokeWidth={`${strokeWidth}px`}
       />
       <circle
-        className="fill-none stroke-[#FFA439] transition-all delay-200 ease-in"
+        className="fill-none stroke-[#FFA439]"
         cx={sqSize / 2}
         cy={sqSize / 2}
         r={radius}
