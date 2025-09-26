@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useEffect } from "react";
 import SeeMore from "./shared/SeeMore";
 const ProductDetails = () => {
-  const { productDetails } = useGetProductDetails();
+  const { productDetails, isPending } = useGetProductDetails();
   const {
     setProduct,
     availableColors,
@@ -23,6 +23,9 @@ const ProductDetails = () => {
     }
   }, [productDetails, setProduct]);
   console.log(availableColors, "from zustand");
+  if (isPending) {
+    return <DetailsSkeleton />;
+  }
 
   return (
     <div className="mt-12 lg:mt-0 lg:w-1/2">
@@ -152,4 +155,23 @@ const ProductDetails = () => {
   );
 };
 
+function DetailsSkeleton() {
+  return (
+    <div className="flex animate-pulse flex-col gap-6 lg:mt-0 lg:w-1/2">
+      <div className="size-10 h-5 w-[150px] bg-gray-200"></div>
+      <div className="size-10 h-8 w-full bg-gray-200"></div>
+      <div className="flex items-center justify-between">
+        <div className="size-10 h-5 w-[150px] bg-gray-200"></div>
+        <div className="size-10 h-5 w-[150px] bg-gray-200"></div>
+      </div>
+      <div className="size-10 h-[300px] w-full bg-gray-200"></div>
+      <div className="size-10 h-20 w-full bg-gray-200"></div>
+
+      <div className="flex flex-wrap items-center justify-between gap-5 sm:mb-10 sm:flex-nowrap lg:flex-wrap xl:flex-nowrap">
+        <div className="size-10 h-10 w-[296px] min-w-[296px] flex-1 bg-gray-200"></div>
+        <div className="size-10 h-10 w-[187px] min-w-[187px] bg-gray-200"></div>
+      </div>
+    </div>
+  );
+}
 export default ProductDetails;

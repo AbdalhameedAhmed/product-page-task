@@ -42,7 +42,7 @@ const ProductGallery = () => {
             />
           ))}
         </div>
-        <div className="flex shrink-0 flex-col items-center justify-between">
+        <div className="flex shrink-0 flex-col items-center justify-between gap-6">
           <div className="flex flex-col gap-5">
             <button className="rounded-lg bg-[#F2F2F2] p-3 sm:p-4">
               <Heart size={20} />
