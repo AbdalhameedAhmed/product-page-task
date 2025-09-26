@@ -1,4 +1,4 @@
-import { useProductDetailsStore } from "@/hooks/productDetails/store/useProductDetailsStore";
+import { useProductDetailsStore } from "@/store/useProductDetailsStore";
 import clsx from "clsx";
 import { ChevronLeft, ChevronRight, Heart, Share2 } from "lucide-react";
 import InnerImageZoom from "react-inner-image-zoom"; // This was already here, just confirming.

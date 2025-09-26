@@ -1,5 +1,5 @@
 import star from "@/assets/Star.svg";
-import { useProductDetailsStore } from "@/hooks/productDetails/store/useProductDetailsStore";
+import { useProductDetailsStore } from "@/store/useProductDetailsStore";
 import { useGetProductDetails } from "@/hooks/useGetProductDetails";
 import clsx from "clsx";
 import { useEffect } from "react";
