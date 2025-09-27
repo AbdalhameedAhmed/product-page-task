@@ -12,6 +12,7 @@ A modern, responsive product page application built with React, TypeScript, and 
 - **Responsive Design** - Mobile-first approach with Tailwind CSS
 - **State Management** - Zustand for cart and product state
 - **API Integration** - React Query for data fetching
+- **Comprehensive Testing** - Jest and React Testing Library for unit and integration tests
 
 ## 🚀 Quick Start
 
@@ -77,8 +78,63 @@ npm run dev          # Start development server
 npm run build        # Build for production
 npm run preview      # Preview production build
 
+# Testing
+npm test             # Run all tests
+npm run test:watch  # Run tests in watch mode
+npm run test:coverage # Generate test coverage report
+
 # Code Quality
 npm run lint         # Run ESLint
+```
+
+## 🧪 Testing
+
+The project includes comprehensive test coverage using Jest and React Testing Library:
+
+### Test Coverage
+
+- **Cart Store Tests** (96.87% coverage)
+  - ✅ Add to cart functionality
+  - ✅ Remove from cart functionality
+  - ✅ Quantity management
+  - ✅ Stock validation
+  - ✅ Edge cases (out of stock, max quantity)
+
+- **Product Details API Tests** (100% coverage)
+  - ✅ API response handling
+  - ✅ Error scenarios
+  - ✅ Loading states
+  - ✅ Data structure validation
+
+- **API Service Tests** (100% coverage)
+  - ✅ HTTP methods (GET, POST, PUT, DELETE)
+  - ✅ Request body handling (JSON, FormData)
+  - ✅ Error handling
+  - ✅ Edge cases
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode (for development)
+npm run test:watch
+
+# Generate coverage report
+npm run test:coverage
+```
+
+### Test Structure
+
+```
+src/
+├── __tests__/              # Test files
+│   ├── store/              # Cart store tests
+│   ├── hooks/              # Product details tests
+│   └── services/           # API service tests
+├── setupTests.ts           # Jest setup configuration
+└── jest.config.cjs         # Jest configuration
 ```
 
 ## 🏗️ Project Structure
@@ -94,7 +150,11 @@ src/
 ├── services/            # API services
 ├── store/               # State management (Zustand)
 ├── types/               # TypeScript type definitions
-└── assets/              # Static assets (images, icons)
+├── assets/              # Static assets (images, icons)
+└── __tests__/           # Test files
+    ├── store/           # Cart functionality tests
+    ├── hooks/           # API hook tests
+    └── services/        # API service tests
 ```
 
 ## 🛠️ Tech Stack
@@ -107,6 +167,8 @@ src/
 - **Data Fetching**: TanStack Query 5.90.2
 - **Icons**: Lucide React 0.544.0
 - **Notifications**: React Toastify 11.0.5
+- **Testing**: Jest 30.1.3, React Testing Library 16.3.0
+- **Test Environment**: jsdom
 
 ## 🎨 Key Features
 
@@ -143,6 +205,8 @@ The project follows modern React and TypeScript best practices:
 - **ESLint** for code linting
 - **Prettier** for code formatting
 - **Tailwind CSS** for utility-first styling
+- **Jest** for comprehensive testing
+- **React Testing Library** for component testing
 
 ## 📱 Browser Support
 
