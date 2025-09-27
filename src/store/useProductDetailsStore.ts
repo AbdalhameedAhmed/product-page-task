@@ -1,4 +1,3 @@
-// stores/useProductStore.ts
 import type { ProductDetailsStore, Prop } from "@/types/hooks/productDetails";
 import { create } from "zustand";
 

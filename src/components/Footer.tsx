@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container mx-auto w-[90%]">
         {/* Newsletter signup */}
         <div className="flex flex-col gap-12 border-b border-dashed border-[#A3A3A3] pb-12 md:flex-row md:items-start md:justify-between">
-          <div>
+          <div className="w-fit">
             <img src={logo} alt="logo" className="mb-10 w-[170px]" />
             <div className="mb-8 flex justify-between border-b">
               <input
