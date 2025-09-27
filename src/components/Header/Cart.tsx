@@ -22,7 +22,14 @@ export default function Cart() {
       ref={cartContainer}
     >
       <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#141414] text-[8px] leading-0 text-white">
-        <span className="absolute top-1/2 left-1/2 -translate-x-[2px] translate-y-[1px] cursor-pointer">
+        <span
+          className={clsx(
+            "absolute top-1/2 left-1/2 -translate-x-[2px] translate-y-[1px] cursor-pointer",
+            {
+              "!-translate-x-[4px]": getItemCount() >= 10,
+            },
+          )}
+        >
           {getItemCount()}
         </span>
       </span>
@@ -30,7 +37,7 @@ export default function Cart() {
       <div
         onClick={(e) => e.stopPropagation()}
         className={clsx(
-          "fixed left-1/2 z-30 w-[90%] origin-[90%_0%] -translate-x-1/2 scale-0 space-y-2 rounded-lg border border-gray-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 sm:absolute sm:-right-4 sm:left-auto sm:w-[400px] sm:translate-x-0",
+          "hideScroll fixed left-1/2 z-30 max-h-[300px] w-[90%] origin-[90%_0%] -translate-x-1/2 scale-0 space-y-2 overflow-auto rounded-lg border border-gray-200 bg-white px-4 py-6 shadow-xl transition-all duration-300 sm:absolute sm:-right-4 sm:left-auto sm:w-[400px] sm:translate-x-0 sm:space-y-4",
           {
             "scale-100": isOpen,
           },
@@ -44,8 +51,21 @@ export default function Cart() {
               <div className="flex items-center gap-2">
                 <img src={item.image} alt="product image" className="w-12" />
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm">{item.name}</p>
-                  <p className="text-sm">{item.price}</p>
+                  <p className="text-sm">
+                    {item.name}{" "}
+                    {item?.color && (
+                      <span style={{ color: item.color }}>{item.color}</span>
+                    )}
+                  </p>
+                  <div className="flex gap-2">
+                    <p className="text-sm">
+                      price:{" "}
+                      <span className="font-bold">{item.price}</span>{" "}
+                    </p>
+                    <p className="text-sm">
+                      size: <span className="font-bold">{item.size}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-8">

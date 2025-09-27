@@ -4,25 +4,43 @@ import { useGetProductDetails } from "@/hooks/useGetProductDetails";
 import clsx from "clsx";
 import { useEffect } from "react";
 import SeeMore from "./shared/SeeMore";
+import { useCartStore } from "@/store/cartStore";
+import { toast } from "react-toastify";
 const ProductDetails = () => {
   const { productDetails, isPending } = useGetProductDetails();
   const {
     setProduct,
     availableColors,
+    selectedVariant,
     availableSizes,
     setSelectedVariation,
     selectedVariations,
     isVariantAvailable,
   } = useProductDetailsStore();
 
+  const { addToCart } = useCartStore();
   useEffect(() => {
     if (productDetails) {
-      setProduct(productDetails);
+      setProduct({ ...productDetails, stock: 1000 });
     }
   }, [productDetails, setProduct]);
   if (isPending) {
     return <DetailsSkeleton />;
   }
+
+  const addToCartHandler = () => {
+    addToCart({
+      id: selectedVariant?.id || "",
+      name: productDetails?.name || "",
+      size: selectedVariations.size,
+      color: selectedVariations.color,
+      image:
+        availableColors.find((ele) => ele.name == selectedVariations.color)
+          ?.value || "",
+      stock: 1000,
+      price: `${productDetails?.sale_price}`,
+    });
+  };
 
   return (
     <div className="mt-12 lg:mt-0 lg:w-1/2">
@@ -32,11 +50,6 @@ const ProductDetails = () => {
           <p className="text-sm text-[#8F8F8F] sm:text-base">
             {productDetails?.slug}
           </p>
-          {!isVariantAvailable() && (
-            <p className="text-sm text-red-500">
-              Selected variant is not available
-            </p>
-          )}
         </div>
         <h1 className="mb-5 text-2xl font-bold md:text-3xl">
           {productDetails?.name}
@@ -133,8 +146,11 @@ const ProductDetails = () => {
       {/* Add to cart section */}
       <div className="flex flex-wrap items-center justify-between gap-5 sm:mb-10 sm:flex-nowrap lg:flex-wrap xl:flex-nowrap">
         <button
-          disabled={!isVariantAvailable()}
-          className="w-[296px] min-w-[296px] rounded-lg bg-gray-900 py-4 font-semibold text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50 md:w-8/12"
+          onClick={() => {
+            addToCartHandler();
+            toast.success("Item added to cart");
+          }}
+          className="w-[296px] min-w-[296px] cursor-pointer rounded-lg bg-gray-900 py-4 font-semibold text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50 md:w-8/12"
         >
           Add To Cart
         </button>

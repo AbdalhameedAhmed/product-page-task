@@ -5,9 +5,9 @@ import { products } from "@/dummyData/products";
 
 type ProductState = {
   products: Product[];
-  decreaseItemStock: (id: number) => void;
-  increaseItemStock: (id: number) => void;
-  getItemCount: (id: number) => number;
+  decreaseItemStock: (id: string) => void;
+  increaseItemStock: (id: string) => void;
+  getItemCount: (id: string) => number;
 };
 
 export const useProductStore = create(

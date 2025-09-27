@@ -5,6 +5,7 @@ export interface ProductDetails {
   store_id: string;
   name: string;
   price: number;
+  stock: number;
   sale_price: number;
   description: string;
   slug: string;

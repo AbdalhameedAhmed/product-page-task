@@ -6,7 +6,7 @@ import product4Image from "@/assets/product4.png";
 import product5Image from "@/assets/product5.png";
 export const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     name: "Whistles",
     price: "£26",
     originalPrice: "£52",
@@ -18,7 +18,7 @@ export const products: Product[] = [
     quantity: 0,
   },
   {
-    id: 2,
+    id: "2",
     name: "John Lewis ANYDAY",
     price: "£26",
     originalPrice: "£40",
@@ -30,7 +30,7 @@ export const products: Product[] = [
     quantity: 0,
   },
   {
-    id: 3,
+    id: "3",
     name: "John Lewis ANYDAY",
     price: "£32",
     originalPrice: null,
@@ -42,7 +42,7 @@ export const products: Product[] = [
     quantity: 0,
   },
   {
-    id: 4,
+    id: "4",
     name: "John Lewis ANYDAY",
     price: "£40",
     originalPrice: null,
@@ -54,7 +54,7 @@ export const products: Product[] = [
     quantity: 0,
   },
   {
-    id: 5,
+    id: "5",
     name: "John Lewis",
     price: "£70",
     originalPrice: null,

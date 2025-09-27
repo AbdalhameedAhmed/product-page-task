@@ -1,11 +1,10 @@
 import star from "@/assets/Star.svg";
 import { useCartStore } from "@/store/cartStore";
-import { useProductStore } from "@/store/productStore";
 import type { Product } from "@/types/shared/ProductCard";
 import { toast } from "react-toastify";
 export default function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useCartStore();
-  const { getItemCount } = useProductStore();
+  const { iSAvailable: isAvailable } = useCartStore();
   return (
     <div
       key={product.id}
@@ -36,13 +35,13 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <button
         onClick={() => {
-          addToCart(product);
+          addToCart({ ...product, size: "18", color: "black" });
           toast.success("Item added to cart");
         }}
-        disabled={!getItemCount(product.id)}
+        disabled={!isAvailable(product.id)}
         className="w-full cursor-pointer rounded-lg bg-gray-900 py-2 text-sm text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {!getItemCount(product.id) ? `Out of stock` : "Add To Cart"}
+        {!isAvailable(product.id) ? `Out of stock` : "Add To Cart"}
       </button>
     </div>
   );
