@@ -32,22 +32,59 @@ A modern, responsive product page application built with React, TypeScript, and 
    cd product-page-task
    ```
 
-2. **Install dependencies**
+2. **Clone the repository**
 
-   ```bash
-   npm install
-   ```
+Before running the project, you need to set up your environment variables.
 
-3. **Start the development server**
+1.  Create a `.env` file in the root of the project.
 
-   ```bash
-   npm run dev
-   ```
+2.  Copy the contents from `.env.example` into your new `.env` file.
 
-4. **Open your browser**
-   Navigate to `http://localhost:5173` to view the application.
+    Your `.env` file should look like this:
+
+    ```
+    VITE_API_URL="https://api.easy-orders.net/api/v1"
+    ```
+
+3.  **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+4.  **Start the development server**
+
+    ```bash
+    npm run dev
+    ```
+
+5.  **Open your browser**
+    Navigate to `http://localhost:5173` to view the application.
 
 ### Option 2: Docker Installation
+
+#### Installation Steps
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd product-page-task
+   ```
+
+2. **Clone the repository**
+
+Before running the project, you need to set up your environment variables.
+
+1.  Create a `.env` file in the root of the project.
+
+2.  Copy the contents from `.env.example` into your new `.env` file.
+
+    Your `.env` file should look like this:
+
+    ```
+    VITE_API_URL="https://api.easy-orders.net/api/v1"
+    ```
 
 #### Prerequisites
 
