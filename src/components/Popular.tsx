@@ -12,7 +12,7 @@ export default function Popular() {
     >
       <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
         {products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard product={product} key={product.id} />
         ))}
       </div>
     </SectionLayout>

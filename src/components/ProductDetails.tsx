@@ -17,12 +17,9 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (productDetails) {
-      console.log(productDetails);
-
       setProduct(productDetails);
     }
   }, [productDetails, setProduct]);
-  console.log(availableColors, "from zustand");
   if (isPending) {
     return <DetailsSkeleton />;
   }

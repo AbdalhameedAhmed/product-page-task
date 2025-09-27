@@ -3,13 +3,8 @@ import clsx from "clsx";
 import { ChevronLeft, ChevronRight, Heart, Share2 } from "lucide-react";
 import InnerImageZoom from "react-inner-image-zoom"; // This was already here, just confirming.
 const ProductGallery = () => {
-  const {
-    availableColors,
-    selectedVariations,
-    setSelectedVariation,
-    selectedVariant,
-  } = useProductDetailsStore();
-  console.log(selectedVariant, "from zustand");
+  const { availableColors, selectedVariations, setSelectedVariation } =
+    useProductDetailsStore();
 
   return (
     <div className="lg:w-1/2">
